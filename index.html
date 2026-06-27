@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Emerson Petro — Gestão de Projetos e Produtos. Blog, portfólio e conteúdo de mercado. Em breve.">
+  <meta property="og:title" content="Emerson Petro — Em breve">
+  <meta property="og:description" content="Algo novo está sendo construído. Blog, portfólio e conteúdo sobre gestão de projetos e produtos.">
+  <meta property="og:type" content="website">
+  <title>Emerson Petro — Em breve</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue-900: #1E3A5F;
+      --blue-700: #1D4ED8;
+      --blue-500: #3B82F6;
+      --blue-200: #BFDBFE;
+      --blue-50:  #EFF6FF;
+      --dark:     #0F172A;
+      --gray-700: #334155;
+      --gray-500: #64748B;
+      --gray-300: #CBD5E1;
+      --gray-100: #F1F5F9;
+      --white:    #FFFFFF;
+      --bg:       #F8FAFC;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    header {
+      padding: 24px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 38px;
+      height: 38px;
+      background: var(--blue-700);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--dark);
+    }
+
+    /* ── MAIN ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .content {
+      max-width: 680px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-50);
+      color: var(--blue-700);
+      border: 1px solid var(--blue-200);
+      padding: 6px 16px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--blue-500);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Headline */
+    h1 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(38px, 6.5vw, 66px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: var(--dark);
+      margin-bottom: 24px;
+    }
+
+    h1 .highlight {
+      color: var(--blue-700);
+    }
+
+    /* Subtitle */
+    .subtitle {
+      font-size: clamp(16px, 2vw, 18px);
+      line-height: 1.75;
+      color: var(--gray-500);
+      max-width: 520px;
+      margin: 0 auto 52px;
+    }
+
+    /* What's coming */
+    .coming-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 52px;
+    }
+
+    .coming-card {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: 18px;
+      padding: 28px 16px 24px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+
+    .coming-card:hover {
+      border-color: var(--blue-200);
+      box-shadow: 0 4px 24px rgba(29, 78, 216, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .coming-icon {
+      font-size: 30px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .coming-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .coming-desc {
+      font-size: 13px;
+      color: var(--gray-500);
+      line-height: 1.55;
+    }
+
+    /* Email form */
+    .form-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-500);
+      margin-bottom: 14px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 10px;
+      max-width: 440px;
+      margin: 0 auto 40px;
+    }
+
+    .form-row input[type="email"] {
+      flex: 1;
+      padding: 14px 18px;
+      border: 1.5px solid var(--gray-300);
+      border-radius: 12px;
+      font-size: 15px;
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      min-width: 0;
+    }
+
+    .form-row input[type="email"]:focus {
+      border-color: var(--blue-500);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    }
+
+    .form-row input[type="email"]::placeholder {
+      color: var(--gray-500);
+    }
+
+    .btn-primary {
+      padding: 14px 22px;
+      background: var(--blue-700);
+      color: var(--white);
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-900);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.97);
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #16a34a;
+      font-weight: 500;
+      padding: 14px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 12px;
+      max-width: 440px;
+      margin: 0 auto 40px;
+    }
+
+    /* Social */
+    .social {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    .social a {
+      color: var(--blue-700);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .social a:hover {
+      color: var(--blue-900);
+      text-decoration: underline;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 20px 48px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-300);
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      header {
+        padding: 20px 20px;
+      }
+
+      .logo-text {
+        display: none;
+      }
+
+      .coming-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .coming-card {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 18px 20px;
+        text-align: left;
+      }
+
+      .coming-icon {
+        font-size: 26px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+
+      .form-row {
+        flex-direction: column;
+      }
+
+      .btn-primary {
+        width: 100%;
+        text-align: center;
+      }
+
+      footer {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo" aria-label="Emerson Petro">
+      <div class="logo-mark" aria-hidden="true">EP</div>
+      <span class="logo-text">Emerson Petro</span>
+    </a>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <div class="content">
+
+      <div class="badge">
+        <div class="badge-dot"></div>
+        Em construção
+      </div>
+
+      <h1>Algo novo está<br>sendo <span class="highlight">construído.</span></h1>
+
+      <p class="subtitle">
+        Este espaço vai reunir minha experiência em gestão de projetos e produtos,
+        tendências do mercado e aprendizados reais do dia a dia.
+      </p>
+
+      <div class="coming-grid">
+        <div class="coming-card">
+          <span class="coming-icon">✍️</span>
+          <div class="coming-title">Blog</div>
+          <div class="coming-desc">Cases, reflexões e aprendizados de gestão</div>
+        </div>
+        <div class="coming-card">
+          <span class="coming-icon">💼</span>
+          <div class="coming-title">Portfólio</div>
+          <div class="coming-desc">Projetos liderados e resultados entregues</div>
+        </div>
+        <div class="coming-card">
+          <span class="coming-icon">📊</span>
+          <div class="coming-title">Mercado</div>
+          <div class="coming-desc">Tendências e ferramentas de produto</div>
+        </div>
+        <div class="coming-card">
+          <span class="coming-icon">🗂️</span>
+          <div class="coming-title">Sistemas & Templates</div>
+          <div class="coming-desc">Templates Notion para PMs e gestores — do roadmap ao sprint</div>
+        </div>
+      </div>
+
+      <p class="form-label">Quer saber quando o site lançar?</p>
+
+      <div class="form-row" id="emailForm">
+        <input type="email" placeholder="seu@email.com" id="emailInput" aria-label="Seu e-mail">
+        <button class="btn-primary" onclick="handleSubmit()">Avise-me</button>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        ✅ Anotado! Te aviso quando lançar.
+      </div>
+
+      <div class="social">
+        Enquanto isso, me encontre no
+        <a href="https://www.linkedin.com/in/emerson-petro/" target="_blank" rel="noopener">LinkedIn →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Emerson Petro · emersonpetro.com.br
+  </footer>
+
+  <script>
+    function handleSubmit() {
+      const input = document.getElementById('emailInput');
+      const form = document.getElementById('emailForm');
+      const success = document.getElementById('formSuccess');
+      const email = input.value.trim();
+
+      if (!email || !email.includes('@')) {
+        input.focus();
+        input.style.borderColor = '#ef4444';
+        setTimeout(() => input.style.borderColor = '', 1500);
+        return;
+      }
+
+      form.style.display = 'none';
+      success.style.display = 'flex';
+    }
+
+    document.getElementById('emailInput').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleSubmit();
+    });
+  </script>
+
+</body>
+</html>
