@@ -6,37 +6,45 @@
   <title>Currículo — Emerson Petro</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue-900: #1E3A5F;
-      --blue-700: #1D4ED8;
-      --blue-500: #3B82F6;
-      --blue-100: #DBEAFE;
-      --blue-50:  #EFF6FF;
-      --dark:     #0F172A;
-      --gray-700: #334155;
-      --gray-500: #64748B;
-      --gray-300: #CBD5E1;
-      --gray-100: #F1F5F9;
-      --white:    #FFFFFF;
+      --ink:        #0F172A;
+      --ink-soft:   #4B5160;
+      --blue:       #1D4ED8;
+      --blue-deep:  #163C9E;
+      --paper:      #FAF9F5;
+      --panel:      #FFFFFF;
+      --hairline:   #E5E1D6;
+      --hairline-2: #D8D3C6;
+      --on-dark:      #F3F1EA;
+      --on-dark-soft: #9CA3AE;
+      --on-dark-line: rgba(243,241,234,0.14);
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--gray-100);
-      color: var(--dark);
+      background: var(--paper);
+      color: var(--ink);
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
-      padding: 32px 16px 64px;
+      padding: 36px 20px 64px;
     }
 
-    /* ── DOWNLOAD BUTTON ── */
-    .download-bar {
-      max-width: 900px;
-      margin: 0 auto 20px;
+    .mono-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      max-width: 920px;
+      margin: 0 auto 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -47,23 +55,23 @@
       align-items: center;
       gap: 6px;
       text-decoration: none;
-      color: var(--gray-500);
+      color: var(--ink-soft);
       font-size: 14px;
       font-weight: 500;
       transition: color 0.2s;
     }
 
-    .back-link:hover { color: var(--blue-700); }
+    .back-link:hover { color: var(--blue); }
 
     .btn-download {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 20px;
-      background: var(--blue-700);
+      padding: 11px 20px;
+      background: var(--blue);
       color: white;
       border: none;
-      border-radius: 10px;
+      border-radius: 7px;
       font-size: 14px;
       font-weight: 600;
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -71,73 +79,74 @@
       transition: background 0.2s;
     }
 
-    .btn-download:hover { background: var(--blue-900); }
+    .btn-download:hover { background: var(--blue-deep); }
 
-    /* ── RESUME CARD ── */
+    /* ── RESUME ── */
     .resume {
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
-      background: var(--white);
-      border-radius: 20px;
+      background: var(--panel);
+      border: 1px solid var(--hairline);
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 272px 1fr;
     }
 
     /* ── SIDEBAR ── */
     .sidebar {
-      background: var(--dark);
-      padding: 40px 28px;
-      color: white;
+      background: var(--ink);
+      padding: 40px 30px;
+      color: var(--on-dark);
       display: flex;
       flex-direction: column;
-      gap: 36px;
+      gap: 34px;
     }
 
     .profile-block {
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
-    .avatar {
-      width: 80px;
-      height: 80px;
-      background: var(--blue-700);
-      border-radius: 50%;
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      background: var(--blue);
+      border-radius: 9px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 800;
-      font-size: 28px;
+      font-size: 15px;
       color: white;
-      margin: 0 auto 16px;
-      border: 3px solid rgba(255,255,255,0.1);
+      letter-spacing: -0.3px;
     }
 
     .profile-name {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 800;
-      font-size: 18px;
-      line-height: 1.3;
-      margin-bottom: 6px;
+      font-size: 19px;
+      line-height: 1.25;
     }
 
     .profile-title {
       font-size: 13px;
-      color: var(--blue-500);
-      font-weight: 600;
-      letter-spacing: 0.3px;
+      color: var(--on-dark-soft);
+      font-weight: 500;
     }
 
     .sidebar-section-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--gray-500);
+      color: var(--on-dark-soft);
       margin-bottom: 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--on-dark-line);
+    }
+
+    .sidebar-block:first-of-type .sidebar-section-title {
+      padding-top: 0;
+      border-top: none;
     }
 
     /* Contact */
@@ -145,75 +154,43 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 11px;
     }
 
     .contact-list li {
-      display: flex;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: 56px 1fr;
       gap: 10px;
       font-size: 13px;
-      color: #94a3b8;
+      color: var(--on-dark);
       line-height: 1.4;
     }
 
-    .contact-list li span.icon {
-      font-size: 14px;
-      flex-shrink: 0;
-      margin-top: 1px;
+    .contact-list li .mono-label {
+      color: var(--on-dark-soft);
+      font-size: 10px;
+      padding-top: 2px;
     }
 
     .contact-list a {
-      color: #94a3b8;
+      color: var(--on-dark);
       text-decoration: none;
       word-break: break-all;
     }
 
-    .contact-list a:hover { color: var(--blue-500); }
+    .contact-list a:hover { color: #6f9bff; }
 
-    /* Skills */
-    .skills-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .skill-item {
-      font-size: 13px;
-      color: #94a3b8;
-    }
-
-    .skill-label {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 4px;
-    }
-
-    .skill-bar {
-      height: 4px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      height: 100%;
-      background: var(--blue-500);
-      border-radius: 2px;
-    }
-
-    /* Tools */
-    .tools-list {
+    /* Skills / Tools as quiet tags */
+    .tag-list {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
     }
 
-    .tool-tag {
-      background: rgba(59,130,246,0.15);
-      color: var(--blue-500);
-      border: 1px solid rgba(59,130,246,0.25);
-      padding: 4px 10px;
+    .tag {
+      border: 1px solid var(--on-dark-line);
+      color: var(--on-dark);
+      padding: 5px 11px;
       border-radius: 6px;
       font-size: 12px;
       font-weight: 500;
@@ -223,165 +200,144 @@
     .lang-list {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 9px;
     }
 
     .lang-item {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
       font-size: 13px;
-      color: #94a3b8;
+      color: var(--on-dark);
     }
 
     .lang-level {
       font-size: 11px;
-      color: var(--gray-500);
+      color: var(--on-dark-soft);
     }
 
     /* ── MAIN ── */
     .main {
-      padding: 40px 36px;
+      padding: 42px 40px;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 34px;
     }
 
     .section-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: var(--blue-700);
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: var(--blue-100);
+      color: var(--ink-soft);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--hairline);
     }
 
     /* Summary */
     .summary-text {
       font-size: 14.5px;
       line-height: 1.75;
-      color: var(--gray-700);
+      color: var(--ink-soft);
+      max-width: 62ch;
     }
 
     /* Experience */
     .exp-list {
       display: flex;
       flex-direction: column;
-      gap: 24px;
     }
 
     .exp-item {
-      position: relative;
-      padding-left: 18px;
-      border-left: 2px solid var(--blue-100);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--hairline);
     }
 
-    .exp-item::before {
-      content: '';
-      position: absolute;
-      left: -5px;
-      top: 5px;
-      width: 8px;
-      height: 8px;
-      background: var(--blue-700);
-      border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 0 0 2px var(--blue-100);
-    }
+    .exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .exp-item:first-child { padding-top: 0; }
 
     .exp-header {
-      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
     }
 
     .exp-role {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
       font-size: 15px;
-      color: var(--dark);
+      color: var(--ink);
     }
 
     .exp-company {
       font-size: 13px;
       font-weight: 600;
-      color: var(--blue-700);
+      color: var(--blue);
+      margin-top: 2px;
     }
 
     .exp-period {
-      font-size: 12px;
-      color: var(--gray-500);
-      margin-top: 2px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.03em;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .exp-desc {
       font-size: 13.5px;
-      color: var(--gray-700);
+      color: var(--ink-soft);
       line-height: 1.65;
       margin-top: 8px;
+      max-width: 64ch;
     }
 
     .exp-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
-      margin-top: 10px;
+      margin-top: 11px;
     }
 
     .exp-tag {
-      background: var(--blue-50);
-      color: var(--blue-700);
-      border: 1px solid var(--blue-100);
+      color: var(--ink-soft);
+      border: 1px solid var(--hairline-2);
       padding: 3px 10px;
       border-radius: 5px;
       font-size: 11px;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     /* Education */
     .edu-list {
       display: flex;
       flex-direction: column;
-      gap: 14px;
     }
 
     .edu-item {
       display: flex;
-      gap: 12px;
-      align-items: flex-start;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--hairline);
+      flex-wrap: wrap;
     }
 
-    .edu-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--blue-50);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
-    }
+    .edu-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .edu-item:first-child { padding-top: 0; }
 
     .edu-degree {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
       font-size: 14px;
-      color: var(--dark);
+      color: var(--ink);
     }
 
     .edu-school {
       font-size: 12.5px;
-      color: var(--gray-500);
+      color: var(--ink-soft);
       margin-top: 2px;
     }
 
@@ -392,10 +348,10 @@
         padding: 0;
       }
 
-      .download-bar { display: none; }
+      .top-bar { display: none; }
 
       .resume {
-        box-shadow: none;
+        border: none;
         border-radius: 0;
         max-width: 100%;
         width: 100%;
@@ -409,27 +365,20 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
-      .resume {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        padding: 28px 20px;
-      }
-
-      .main {
-        padding: 28px 20px;
-      }
+      .resume { grid-template-columns: 1fr; }
+      .sidebar { padding: 30px 22px; }
+      .main { padding: 30px 22px; }
+      .exp-header { flex-direction: column; gap: 2px; }
     }
   </style>
 </head>
 <body>
 
   <!-- TOP BAR -->
-  <div class="download-bar">
+  <div class="top-bar">
     <a href="/" class="back-link">← Voltar ao site</a>
     <button class="btn-download" onclick="window.print()">
-      ⬇ Baixar PDF
+      ↓ Baixar PDF
     </button>
   </div>
 
@@ -440,68 +389,52 @@
     <aside class="sidebar">
 
       <div class="profile-block">
-        <div class="avatar">EP</div>
-        <div class="profile-name">Emerson<br>Ricardo Petro</div>
-        <div class="profile-title">Gestor de Projetos & Produtos</div>
+        <div class="logo-mark" aria-hidden="true">EP</div>
+        <div>
+          <div class="profile-name">Emerson Petro</div>
+          <div class="profile-title">Gestor de Projetos &amp; Produtos</div>
+        </div>
       </div>
 
-      <div>
-        <div class="sidebar-section-title">Contato</div>
+      <div class="sidebar-block">
+        <div class="sidebar-section-title mono-label">Contato</div>
         <ul class="contact-list">
-          <li><span class="icon">📍</span> Garopaba / SC</li>
-          <li><span class="icon">📱</span> (48) 99189-0012</li>
-          <li><span class="icon">✉️</span> <a href="mailto:emerson.petro@hotmail.com">emerson.petro@hotmail.com</a></li>
-          <li><span class="icon">🌐</span> <a href="https://emersonpetro.com.br" target="_blank">emersonpetro.com.br</a></li>
-          <li><span class="icon">💼</span> <a href="https://linkedin.com/in/emerson-petro" target="_blank">linkedin.com/in/emerson-petro</a></li>
+          <li><span class="mono-label">Local</span> Garopaba / SC</li>
+          <li><span class="mono-label">Tel</span> (48) 99189-0012</li>
+          <li><span class="mono-label">Email</span> <a href="mailto:emerson.petro@hotmail.com">emerson.petro@hotmail.com</a></li>
+          <li><span class="mono-label">Site</span> <a href="https://emersonpetro.com.br" target="_blank">emersonpetro.com.br</a></li>
+          <li><span class="mono-label">Linkedin</span> <a href="https://linkedin.com/in/emerson-petro" target="_blank">linkedin.com/in/emerson-petro</a></li>
         </ul>
       </div>
 
-      <div>
-        <div class="sidebar-section-title">Competências</div>
-        <div class="skills-list">
-          <div class="skill-item">
-            <div class="skill-label"><span>Gestão de Projetos</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Gestão de Produtos</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Metodologias Ágeis</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Gestão de Equipes</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Sistemas Notion</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-label"><span>Controle de SLA/KPI</span></div>
-            <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
-          </div>
+      <div class="sidebar-block">
+        <div class="sidebar-section-title mono-label">Competências</div>
+        <div class="tag-list">
+          <span class="tag">Gestão de Projetos</span>
+          <span class="tag">Gestão de Produtos</span>
+          <span class="tag">Metodologias Ágeis</span>
+          <span class="tag">Gestão de Equipes</span>
+          <span class="tag">Sistemas Notion</span>
+          <span class="tag">Controle de SLA/KPI</span>
         </div>
       </div>
 
-      <div>
-        <div class="sidebar-section-title">Ferramentas</div>
-        <div class="tools-list">
-          <span class="tool-tag">Notion</span>
-          <span class="tool-tag">Jira</span>
-          <span class="tool-tag">ClickUp</span>
-          <span class="tool-tag">Miro</span>
-          <span class="tool-tag">MS Project</span>
-          <span class="tool-tag">Scrum</span>
-          <span class="tool-tag">Kanban</span>
-          <span class="tool-tag">PMI/PMBOK</span>
+      <div class="sidebar-block">
+        <div class="sidebar-section-title mono-label">Ferramentas</div>
+        <div class="tag-list">
+          <span class="tag">Notion</span>
+          <span class="tag">Jira</span>
+          <span class="tag">ClickUp</span>
+          <span class="tag">Miro</span>
+          <span class="tag">MS Project</span>
+          <span class="tag">Scrum</span>
+          <span class="tag">Kanban</span>
+          <span class="tag">PMI/PMBOK</span>
         </div>
       </div>
 
-      <div>
-        <div class="sidebar-section-title">Idiomas</div>
+      <div class="sidebar-block">
+        <div class="sidebar-section-title mono-label">Idiomas</div>
         <div class="lang-list">
           <div class="lang-item">
             <span>Português</span>
@@ -521,7 +454,7 @@
 
       <!-- SUMMARY -->
       <section>
-        <div class="section-title">Sobre</div>
+        <div class="section-title mono-label">Sobre</div>
         <p class="summary-text">
           Gestor de Projetos e Produtos com mais de 25 anos de experiência em tecnologia e telecomunicações.
           Sólida trajetória na liderança de projetos de alta complexidade para grandes operadoras como
@@ -534,14 +467,16 @@
 
       <!-- EXPERIENCE -->
       <section>
-        <div class="section-title">Experiência</div>
+        <div class="section-title mono-label">Experiência</div>
         <div class="exp-list">
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role">Gerente de Projetos e Produtos</div>
-              <div class="exp-company">Duoward</div>
-              <div class="exp-period">ago/2024 — atual</div>
+              <div>
+                <div class="exp-role">Gerente de Projetos e Produtos</div>
+                <div class="exp-company">Duoward</div>
+              </div>
+              <div class="exp-period">AGO/2024 — ATUAL</div>
             </div>
             <p class="exp-desc">
               Responsável pela gestão estratégica de projetos e produtos digitais, liderando roadmap,
@@ -558,9 +493,11 @@
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role">Gestão Comercial e de Projetos</div>
-              <div class="exp-company">HE Soluções — Garopaba/SC</div>
-              <div class="exp-period">mar/2019 — jul/2024</div>
+              <div>
+                <div class="exp-role">Gestão Comercial e de Projetos</div>
+                <div class="exp-company">HE Soluções — Garopaba/SC</div>
+              </div>
+              <div class="exp-period">MAR/2019 — JUL/2024</div>
             </div>
             <p class="exp-desc">
               Atuando com foco em gestão comercial e de projetos acompanhando a execução de projetos
@@ -576,9 +513,11 @@
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role">Gerente de Implementação</div>
-              <div class="exp-company">Ericsson Gestão e Serviços de Telecomunicações</div>
-              <div class="exp-period">mai/2012 — dez/2018</div>
+              <div>
+                <div class="exp-role">Gerente de Implementação</div>
+                <div class="exp-company">Ericsson Gestão e Serviços de Telecomunicações</div>
+              </div>
+              <div class="exp-period">MAI/2012 — DEZ/2018</div>
             </div>
             <p class="exp-desc">
               Liderança de equipes e processos em projetos de expansão de redes celulares para Claro (RS/SP),
@@ -596,12 +535,14 @@
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role">Coordenador de Projetos → Supervisor de Implantação → Gestor de Contrato</div>
-              <div class="exp-company">Ericsson Gestão e Serviços de Telecomunicações</div>
-              <div class="exp-period">out/2007 — out/2011</div>
+              <div>
+                <div class="exp-role">Coordenador de Projetos → Supervisor de Implantação → Gestor de Contrato</div>
+                <div class="exp-company">Ericsson Gestão e Serviços de Telecomunicações</div>
+              </div>
+              <div class="exp-period">OUT/2007 — OUT/2011</div>
             </div>
             <p class="exp-desc">
-              Progressão de carreira na Ericsson: gestão de contrato O&M para rede GSM Brasil Telecom
+              Progressão de carreira na Ericsson: gestão de contrato O&amp;M para rede GSM Brasil Telecom
               (controle de SLA e orçamento), supervisão de implantação celular OI/RS e coordenação
               de projetos de acesso celular com planejamento, integração de áreas e acompanhamento de resultados.
             </p>
@@ -614,12 +555,14 @@
 
           <div class="exp-item">
             <div class="exp-header">
-              <div class="exp-role">Supervisor Técnico</div>
-              <div class="exp-company">OEMTEL / Ematel — (Grupo Ericsson)</div>
-              <div class="exp-period">abr/2003 — out/2007</div>
+              <div>
+                <div class="exp-role">Supervisor Técnico</div>
+                <div class="exp-company">OEMTEL / Ematel — (Grupo Ericsson)</div>
+              </div>
+              <div class="exp-period">ABR/2003 — OUT/2007</div>
             </div>
             <p class="exp-desc">
-              Supervisão de equipes de O&M para redes GSM (Brasil Telecom, TIM, Claro). Controle de SLA,
+              Supervisão de equipes de O&amp;M para redes GSM (Brasil Telecom, TIM, Claro). Controle de SLA,
               disponibilidade de rede e suporte técnico às equipes internas e contratadas.
             </p>
           </div>
@@ -629,39 +572,27 @@
 
       <!-- EDUCATION -->
       <section>
-        <div class="section-title">Formação</div>
+        <div class="section-title mono-label">Formação</div>
         <div class="edu-list">
 
           <div class="edu-item">
-            <div class="edu-icon">🎓</div>
-            <div>
-              <div class="edu-degree">MBA em Gestão Ágil</div>
-              <div class="edu-school">Universidade MindMaster</div>
-            </div>
+            <div class="edu-degree">MBA em Gestão Ágil</div>
+            <div class="edu-school">Universidade MindMaster</div>
           </div>
 
           <div class="edu-item">
-            <div class="edu-icon">📚</div>
-            <div>
-              <div class="edu-degree">Pós-Graduação em Gestão de Projetos</div>
-              <div class="edu-school">UNINTER — Porto Alegre, RS</div>
-            </div>
+            <div class="edu-degree">Pós-Graduação em Gestão de Projetos</div>
+            <div class="edu-school">UNINTER — Porto Alegre, RS</div>
           </div>
 
           <div class="edu-item">
-            <div class="edu-icon">🏛️</div>
-            <div>
-              <div class="edu-degree">Tecnólogo em Processos Gerenciais</div>
-              <div class="edu-school">UNISUL — Tubarão, SC</div>
-            </div>
+            <div class="edu-degree">Tecnólogo em Processos Gerenciais</div>
+            <div class="edu-school">UNISUL — Tubarão, SC</div>
           </div>
 
           <div class="edu-item">
-            <div class="edu-icon">📡</div>
-            <div>
-              <div class="edu-degree">Técnico em Telecomunicações</div>
-              <div class="edu-school">Colégio Cristo Redentor — Canoas, RS</div>
-            </div>
+            <div class="edu-degree">Técnico em Telecomunicações</div>
+            <div class="edu-school">Colégio Cristo Redentor — Canoas, RS</div>
           </div>
 
         </div>

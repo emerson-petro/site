@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Emerson Petro — Gestão de Projetos e Produtos. Blog, portfólio e conteúdo de mercado. Em breve.">
-  <meta property="og:title" content="Emerson Petro — Em breve">
-  <meta property="og:description" content="Algo novo está sendo construído. Blog, portfólio e conteúdo sobre gestão de projetos e produtos.">
+  <meta name="description" content="Emerson Petro — Gerente de Projetos e Produtos, 25+ anos em tech e telecom. Cases, sistemas Notion e conteúdo de mercado. Em breve.">
+  <meta property="og:title" content="Emerson Petro — Gestão de produto, com método">
+  <meta property="og:description" content="PM sênior com 25+ anos em tech e telecom. Em breve: cases reais e os sistemas Notion que uso no dia a dia.">
   <meta property="og:type" content="website">
-  <title>Emerson Petro — Em breve</title>
+  <title>Emerson Petro — Gestão de produto, com método</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -19,405 +19,557 @@
     }
 
     :root {
-      --blue-900: #1E3A5F;
-      --blue-700: #1D4ED8;
-      --blue-500: #3B82F6;
-      --blue-200: #BFDBFE;
-      --blue-50:  #EFF6FF;
-      --dark:     #0F172A;
-      --gray-700: #334155;
-      --gray-500: #64748B;
-      --gray-300: #CBD5E1;
-      --gray-100: #F1F5F9;
-      --white:    #FFFFFF;
-      --bg:       #F8FAFC;
+      --ink:        #0F172A;
+      --ink-soft:   #4B5160;
+      --blue:       #1D4ED8;
+      --blue-deep:  #163C9E;
+      --paper:      #FAF9F5;
+      --panel:      #FFFFFF;
+      --hairline:   #E5E1D6;
+      --hairline-2: #D8D3C6;
     }
 
-    html, body {
-      height: 100%;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--dark);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      background-color: var(--paper);
+      color: var(--ink);
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 32px;
     }
 
     /* ── HEADER ── */
     header {
-      padding: 24px 48px;
+      padding: 36px 0 0;
+    }
+
+    .header-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--hairline);
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
       text-decoration: none;
     }
 
     .logo-mark {
-      width: 38px;
-      height: 38px;
-      background: var(--blue-700);
-      border-radius: 10px;
+      width: 34px;
+      height: 34px;
+      background: var(--blue);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 800;
-      font-size: 15px;
-      color: var(--white);
-      letter-spacing: -0.5px;
+      font-size: 13px;
+      color: #fff;
+      letter-spacing: -0.3px;
       flex-shrink: 0;
     }
 
     .logo-text {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
-      font-size: 17px;
-      color: var(--dark);
+      font-size: 16px;
+      color: var(--ink);
+      letter-spacing: -0.1px;
     }
 
-    /* ── MAIN ── */
-    main {
-      flex: 1;
+    .status-tag {
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 40px 24px;
-    }
-
-    .content {
-      max-width: 680px;
-      width: 100%;
-      text-align: center;
-    }
-
-    /* Badge */
-    .badge {
-      display: inline-flex;
-      align-items: center;
       gap: 8px;
-      background: var(--blue-50);
-      color: var(--blue-700);
-      border: 1px solid var(--blue-200);
-      padding: 6px 16px;
-      border-radius: 100px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      margin-bottom: 32px;
+      color: var(--ink-soft);
+      white-space: nowrap;
     }
 
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--blue-500);
+    .status-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
+      background: var(--blue);
+      flex-shrink: 0;
+      animation: pulse 2.4s ease-in-out infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.4; transform: scale(0.85); }
+      0%, 100% { opacity: 1; }
+      50%      { opacity: 0.35; }
     }
 
-    /* Headline */
+    /* ── HERO ── */
+    .hero {
+      padding: 64px 0 8px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: rise 0.6s ease forwards;
+      animation-delay: 0.05s;
+    }
+
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
     h1 {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(38px, 6.5vw, 66px);
+      font-size: clamp(36px, 6vw, 60px);
       font-weight: 800;
-      line-height: 1.08;
-      letter-spacing: -2px;
-      color: var(--dark);
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      max-width: 13ch;
+      margin-bottom: 22px;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 46ch;
+      margin-bottom: 32px;
+    }
+
+    .cta-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      background: var(--blue);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14.5px;
+      font-weight: 600;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-deep);
+    }
+
+    .link-secondary {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--hairline-2);
+      padding-bottom: 1px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .link-secondary:hover {
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+
+    /* ── STATUS TRACK ── */
+    .track-section {
+      padding: 56px 0 48px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: rise 0.6s ease forwards;
+      animation-delay: 0.15s;
+    }
+
+    .track-eyebrow {
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
       margin-bottom: 24px;
     }
 
-    h1 .highlight {
-      color: var(--blue-700);
+    .track {
+      position: relative;
+      padding-top: 5px;
     }
 
-    /* Subtitle */
-    .subtitle {
-      font-size: clamp(16px, 2vw, 18px);
-      line-height: 1.75;
-      color: var(--gray-500);
-      max-width: 520px;
-      margin: 0 auto 52px;
+    .track-line {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--hairline-2);
     }
 
-    /* What's coming */
-    .coming-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-bottom: 52px;
+    .track-fill {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      height: 1px;
+      background: var(--blue);
+      width: 0%;
+      animation: fill-track 1s cubic-bezier(.4,0,.2,1) forwards;
+      animation-delay: 0.4s;
     }
 
-    .coming-card {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: 18px;
-      padding: 28px 16px 24px;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    @keyframes fill-track {
+      to { width: 30%; }
     }
 
-    .coming-card:hover {
-      border-color: var(--blue-200);
-      box-shadow: 0 4px 24px rgba(29, 78, 216, 0.08);
-      transform: translateY(-2px);
+    .track-row {
+      display: flex;
     }
 
-    .coming-icon {
-      font-size: 30px;
-      margin-bottom: 14px;
+    .stage {
+      flex: 1;
+      position: relative;
+      text-align: center;
+      padding-top: 17px;
+    }
+
+    .stage::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 1.5px solid var(--hairline-2);
+      z-index: 1;
+    }
+
+    .stage.done::before {
+      background: var(--blue);
+      border-color: var(--blue);
+      opacity: 0.45;
+    }
+
+    .stage.current::before {
+      background: var(--blue);
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.14);
+    }
+
+    .stage span {
       display: block;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
     }
 
-    .coming-title {
+    .stage.current span {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* ── O QUE VEM ── */
+    .upcoming {
+      padding: 16px 0 48px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: rise 0.6s ease forwards;
+      animation-delay: 0.25s;
+    }
+
+    .upcoming-list {
+      border-top: 1px solid var(--hairline);
+    }
+
+    .upcoming-item {
+      display: flex;
+      align-items: baseline;
+      gap: 18px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--hairline);
+      transition: color 0.2s;
+    }
+
+    .upcoming-num {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px;
+      color: var(--hairline-2);
+      flex-shrink: 0;
+      width: 20px;
+    }
+
+    .upcoming-title {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 700;
       font-size: 15px;
-      color: var(--dark);
-      margin-bottom: 6px;
+      color: var(--ink);
+      flex-shrink: 0;
     }
 
-    .coming-desc {
-      font-size: 13px;
-      color: var(--gray-500);
-      line-height: 1.55;
-    }
-
-    /* Email form */
-    .form-label {
+    .upcoming-desc {
       font-size: 14px;
-      font-weight: 500;
-      color: var(--gray-500);
-      margin-bottom: 14px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    /* ── EMAIL CAPTURE ── */
+    .capture {
+      padding: 8px 0 56px;
+      border-top: 1px solid var(--hairline);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: rise 0.6s ease forwards;
+      animation-delay: 0.32s;
+    }
+
+    .capture-label {
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin: 28px 0 14px;
     }
 
     .form-row {
       display: flex;
       gap: 10px;
-      max-width: 440px;
-      margin: 0 auto 40px;
+      max-width: 420px;
     }
 
     .form-row input[type="email"] {
       flex: 1;
-      padding: 14px 18px;
-      border: 1.5px solid var(--gray-300);
-      border-radius: 12px;
-      font-size: 15px;
+      padding: 12px 16px;
+      border: 1px solid var(--hairline-2);
+      border-radius: 7px;
+      font-size: 14px;
       font-family: 'Inter', sans-serif;
-      color: var(--dark);
-      background: var(--white);
+      color: var(--ink);
+      background: var(--panel);
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
       min-width: 0;
     }
 
-    .form-row input[type="email"]:focus {
-      border-color: var(--blue-500);
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+    .form-row input[type="email"]:focus-visible {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
     }
 
     .form-row input[type="email"]::placeholder {
-      color: var(--gray-500);
+      color: #A8A398;
     }
 
-    .btn-primary {
-      padding: 14px 22px;
-      background: var(--blue-700);
-      color: var(--white);
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
+    .btn-outline {
+      padding: 12px 18px;
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--hairline-2);
+      border-radius: 7px;
+      font-size: 14px;
       font-weight: 600;
       font-family: 'Plus Jakarta Sans', sans-serif;
       cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
+      transition: border-color 0.2s, color 0.2s;
       white-space: nowrap;
     }
 
-    .btn-primary:hover {
-      background: var(--blue-900);
+    .btn-outline:hover {
+      border-color: var(--ink);
     }
 
-    .btn-primary:active {
-      transform: scale(0.97);
-    }
-
-    /* Success message */
     .form-success {
       display: none;
       align-items: center;
-      justify-content: center;
       gap: 8px;
       font-size: 14px;
-      color: #16a34a;
-      font-weight: 500;
-      padding: 14px;
-      background: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-radius: 12px;
-      max-width: 440px;
-      margin: 0 auto 40px;
-    }
-
-    /* Social */
-    .social {
-      font-size: 14px;
-      color: var(--gray-500);
-    }
-
-    .social a {
-      color: var(--blue-700);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    .social a:hover {
-      color: var(--blue-900);
-      text-decoration: underline;
+      color: var(--blue-deep);
+      max-width: 420px;
     }
 
     /* ── FOOTER ── */
     footer {
-      padding: 20px 48px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--gray-300);
-      border-top: 1px solid #e2e8f0;
+      padding: 24px 0 40px;
+      border-top: 1px solid var(--hairline);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer, .footer-links {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--blue);
+    }
+
+    /* ── FOCUS ── */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 2px;
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 640px) {
-      header {
-        padding: 20px 20px;
-      }
+      .wrap { padding: 0 20px; }
+      header { padding-top: 24px; }
+      .hero { padding-top: 44px; }
+      .stage span { font-size: 9px; letter-spacing: 0.02em; }
+      .upcoming-item { flex-wrap: wrap; gap: 4px 18px; }
+      .form-row { flex-direction: column; }
+      .btn-outline { width: 100%; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
 
-      .logo-text {
-        display: none;
+    @media (prefers-reduced-motion: reduce) {
+      .hero, .track-section, .upcoming, .capture, .track-fill, .status-dot {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
       }
-
-      .coming-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .coming-card {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 18px 20px;
-        text-align: left;
-      }
-
-      .coming-icon {
-        font-size: 26px;
-        margin-bottom: 0;
-        flex-shrink: 0;
-      }
-
-      .form-row {
-        flex-direction: column;
-      }
-
-      .btn-primary {
-        width: 100%;
-        text-align: center;
-      }
-
-      footer {
-        padding: 20px;
-      }
+      .track-fill { width: 30% !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <a href="#" class="logo" aria-label="Emerson Petro">
-      <div class="logo-mark" aria-hidden="true">EP</div>
-      <span class="logo-text">Emerson Petro</span>
-    </a>
-  </header>
+  <div class="wrap">
 
-  <!-- MAIN -->
-  <main>
-    <div class="content">
-
-      <div class="badge">
-        <div class="badge-dot"></div>
-        Em construção
-      </div>
-
-      <h1>Algo novo está<br>sendo <span class="highlight">construído.</span></h1>
-
-      <p class="subtitle">
-        Este espaço vai reunir minha experiência em gestão de projetos e produtos,
-        tendências do mercado e aprendizados reais do dia a dia.
-      </p>
-
-      <div class="coming-grid">
-        <div class="coming-card">
-          <span class="coming-icon">✍️</span>
-          <div class="coming-title">Blog</div>
-          <div class="coming-desc">Cases, reflexões e aprendizados de gestão</div>
-        </div>
-        <div class="coming-card">
-          <span class="coming-icon">💼</span>
-          <div class="coming-title">Portfólio</div>
-          <div class="coming-desc">Projetos liderados e resultados entregues</div>
-        </div>
-        <div class="coming-card">
-          <span class="coming-icon">📊</span>
-          <div class="coming-title">Mercado</div>
-          <div class="coming-desc">Tendências e ferramentas de produto</div>
-        </div>
-        <div class="coming-card">
-          <span class="coming-icon">🗂️</span>
-          <div class="coming-title">Sistemas & Templates</div>
-          <div class="coming-desc">Templates Notion para PMs e gestores — do roadmap ao sprint</div>
+    <!-- HEADER -->
+    <header>
+      <div class="header-row">
+        <a href="#" class="logo" aria-label="Emerson Petro">
+          <div class="logo-mark" aria-hidden="true">EP</div>
+          <span class="logo-text">Emerson Petro</span>
+        </a>
+        <div class="status-tag">
+          <span class="status-dot" aria-hidden="true"></span>
+          Status: em construção
         </div>
       </div>
+    </header>
 
-      <p class="form-label">Quer saber quando o site lançar?</p>
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <h1>Gestão de produto, com método.</h1>
+        <p class="subtitle">
+          PM sênior com mais de 25 anos em tech e telecom. Em breve: cases reais
+          e os sistemas Notion que uso para gerenciar produtos no dia a dia.
+        </p>
+        <div class="cta-row">
+          <a href="/curriculo.html" class="btn-primary">Ver currículo</a>
+          <a href="https://www.linkedin.com/in/emerson-petro/" target="_blank" rel="noopener" class="link-secondary">LinkedIn ↗</a>
+        </div>
+      </section>
 
-      <div class="form-row" id="emailForm">
-        <input type="email" placeholder="seu@email.com" id="emailInput" aria-label="Seu e-mail">
-        <button class="btn-primary" onclick="handleSubmit()">Avise-me</button>
+      <!-- STATUS TRACK -->
+      <section class="track-section" aria-label="Status do projeto deste site">
+        <p class="track-eyebrow">Status do site · ciclo de projeto</p>
+        <div class="track">
+          <div class="track-line"></div>
+          <div class="track-fill"></div>
+          <div class="track-row">
+            <div class="stage done"><span>Iniciação</span></div>
+            <div class="stage current"><span>Planejamento</span></div>
+            <div class="stage"><span>Execução</span></div>
+            <div class="stage"><span>Monitoramento</span></div>
+            <div class="stage"><span>Encerramento</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- O QUE VEM -->
+      <section class="upcoming">
+        <p class="track-eyebrow">O que vem</p>
+        <div class="upcoming-list">
+          <div class="upcoming-item">
+            <span class="upcoming-num">01</span>
+            <span class="upcoming-title">Blog</span>
+            <span class="upcoming-desc">Cases, reflexões e aprendizados de gestão</span>
+          </div>
+          <div class="upcoming-item">
+            <span class="upcoming-num">02</span>
+            <span class="upcoming-title">Portfólio</span>
+            <span class="upcoming-desc">Projetos liderados e resultados entregues</span>
+          </div>
+          <div class="upcoming-item">
+            <span class="upcoming-num">03</span>
+            <span class="upcoming-title">Mercado</span>
+            <span class="upcoming-desc">Tendências e ferramentas de produto</span>
+          </div>
+          <div class="upcoming-item">
+            <span class="upcoming-num">04</span>
+            <span class="upcoming-title">Sistemas &amp; Templates</span>
+            <span class="upcoming-desc">Templates Notion para PMs e gestores</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EMAIL CAPTURE -->
+      <section class="capture">
+        <p class="capture-label">Quer saber quando o site lançar?</p>
+        <div class="form-row" id="emailForm">
+          <input type="email" placeholder="seu@email.com" id="emailInput" aria-label="Seu e-mail">
+          <button class="btn-outline" onclick="handleSubmit()">Avisar</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          Anotado — te aviso quando lançar.
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© 2026 Emerson Petro · emersonpetro.com.br</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/emerson-petro/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/curriculo.html">Currículo</a>
       </div>
+    </footer>
 
-      <div class="form-success" id="formSuccess">
-        ✅ Anotado! Te aviso quando lançar.
-      </div>
-
-      <div class="social">
-        Enquanto isso, me encontre no
-        <a href="https://www.linkedin.com/in/emerson-petro/" target="_blank" rel="noopener">LinkedIn →</a>
-        <span style="margin: 0 8px; color: var(--gray-300);">·</span>
-        <a href="/curriculo.html" rel="noopener">Ver currículo →</a>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Emerson Petro · emersonpetro.com.br
-  </footer>
+  </div>
 
   <script>
     function handleSubmit() {
@@ -428,7 +580,7 @@
 
       if (!email || !email.includes('@')) {
         input.focus();
-        input.style.borderColor = '#ef4444';
+        input.style.borderColor = '#dc2626';
         setTimeout(() => input.style.borderColor = '', 1500);
         return;
       }
@@ -437,7 +589,7 @@
       success.style.display = 'flex';
     }
 
-    document.getElementById('emailInput').addEventListener('keydown', function(e) {
+    document.getElementById('emailInput').addEventListener('keydown', function (e) {
       if (e.key === 'Enter') handleSubmit();
     });
   </script>
