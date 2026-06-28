@@ -106,22 +106,17 @@
     .profile-block {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 18px;
     }
 
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      background: var(--blue);
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
       border-radius: 9px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      font-size: 15px;
-      color: white;
-      letter-spacing: -0.3px;
+      border: 1px solid var(--on-dark-line);
+      display: block;
     }
 
     .profile-name {
@@ -389,7 +384,7 @@
     <aside class="sidebar">
 
       <div class="profile-block">
-        <div class="logo-mark" aria-hidden="true">EP</div>
+        <img class="profile-photo" src="branding/foto-perfil.png" alt="Emerson Petro">
         <div>
           <div class="profile-name">Emerson Petro</div>
           <div class="profile-title">Gestor de Projetos &amp; Produtos</div>
