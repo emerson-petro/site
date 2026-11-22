@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Emerson Petro</title>
+  <defs>
+    <!-- folga em volta do marco: recorta as letras, funciona em qualquer fundo (inclusive transparente) -->
+    <mask id="folga" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+      <rect width="512" height="512" fill="#fff"/>
+      <path d="M236 214 L278 256 L236 298 L194 256 Z" fill="#000" stroke="#000" stroke-width="20" stroke-linejoin="miter"/>
+    </mask>
+  </defs>
+  <rect x="0" y="0" width="512" height="512" rx="120" fill="#1D4ED8"/>
+  <g transform="translate(15 0)">
+    <g fill="#FFFFFF" mask="url(#folga)">
+      <!-- E: o traço do meio é a linha do tempo que chega no marco -->
+      <path d="M96 136 H216 V176 H136 V236 H236 V276 H136 V336 H216 V376 H96 Z"/>
+      <!-- P: a perna sai do marco e a curva volta pra ele -->
+      <path d="M256 136 H316 A70 70 0 0 1 316 276 H296 V376 H256 V236 H316 A30 30 0 0 0 316 176 H256 Z"/>
+      <rect x="236" y="236" width="40" height="40"/>
+    </g>
+    <!-- o marco (losango do cronograma) -->
+    <path d="M236 214 L278 256 L236 298 L194 256 Z" fill="#0F172A"/>
+  </g>
+</svg>
